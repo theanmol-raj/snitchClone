@@ -8,7 +8,7 @@ import ProductScreen from "./screens/ProductScreen";
 
 function App() {
   return (
-    <div className="App overflow-x-hidden">
+    <div className=" h-screen">
       <Navbar />
       <BrowserRouter basename="/">
           <Routes>
