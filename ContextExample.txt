@@ -1,0 +1,43 @@
+import Navbar from "./components/Navbar";
+import HomeScreen from "./screens/HomeScreen";
+
+import { createContext , useContext  } from 'react'
+
+
+
+const XYZContext = createContext()
+
+
+function Comp2(){
+  const data = useContext(XYZContext)
+  console.log(data)
+
+  return <div>
+    {data}
+  </div>
+}
+
+function Comp1(){
+  return <div>
+    <Comp2  />
+  </div>
+}
+
+
+function App() {
+  const temp = 0 
+
+  return (
+    <div className="App overflow-x-hidden">
+      {/* <Navbar /> */}
+      <XYZContext.Provider  value={temp} >
+        <Comp1/>
+      </XYZContext.Provider>
+      
+
+      {/* <HomeScreen /> */}
+    </div>
+  );
+}
+
+export default App;
